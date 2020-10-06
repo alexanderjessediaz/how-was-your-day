@@ -1,5 +1,5 @@
-import Loading from "./loading";
-import NavBar from "./nav-bar";
-import PrivateRoute from "./private-route";
+import Loading from "./Loading";
+import NavBar from "./NavBar";
+import PrivateRoute from "./PrivateRoute";
 
 export { Loading, NavBar, PrivateRoute };

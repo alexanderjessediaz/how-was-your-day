@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => (
     <div>
         <p>Hello World</p>
-    </div>
+    </div> 
 )
 
-export default Hero
+export default Hero;

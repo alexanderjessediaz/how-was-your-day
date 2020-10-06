@@ -1,13 +1,13 @@
-import { Auth0Provider } from '@auth0/auth0-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { Auth0Provider } from '@auth0/auth0-react';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Auth0Provider
-    domain=""
-    clientId=""
+    domain="dev-v-uyqjzp.us.auth0.com"
+    clientId="QT6mBtJ5FKnrWpbv6XvjSl5h1IHlEsvI"
     redirectUri={'http://localhost:3000'}
   >
     <App />

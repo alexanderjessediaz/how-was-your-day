@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup, Container } from "react-bootstrap";
-import { Highlight } from "../components";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const ExternalApi = () => {
@@ -59,7 +58,6 @@ export const ExternalApi = () => {
       {message && (
         <div className="mt-5">
           <h6 className="muted">Result</h6>
-          <Highlight>{JSON.stringify(message, null, 2)}</Highlight>
         </div>
       )}
     </Container>
