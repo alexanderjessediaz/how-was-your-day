@@ -7,6 +7,8 @@ const Hero = () => (
         <p id="main-p">A place where you can jot down how you day was. Good, bad, meh, however your day was sum it up the way you want!</p>
 
     </section>
+
+    
 )
 
 export default Hero;
