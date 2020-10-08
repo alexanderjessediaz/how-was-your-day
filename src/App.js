@@ -1,28 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import { NavBar, PrivateRoute } from "./Components";
+import { NavBar, PrivateRoute, Loading } from "./Components";
 import { Home, Profile, ExternalApi } from "./Views/Index";
-const postUrl = "http://localhost:4000/posts"
+import { useAuth0 } from "@auth0/auth0-react";
 
 
-class App extends Component {
+const App = () => {
   
-  state = {
-    posts:[]
-  }
+  const { isLoading } = useAuth0();
 
-  componentDidMount(){
-    this.getPosts()
+  if (isLoading) {
+    return <Loading />;
   }
-
-  getPosts = () => {
-    fetch(postUrl)
-      .then(response => response.json())
-      .then(posts => this.setState({posts}))
-  }
-
-  render(){
     
     return (
       <div className="App">
@@ -36,7 +26,7 @@ class App extends Component {
         </Container>
       </div>
     );
-  }
+  // }
 }
 
 export default App;
