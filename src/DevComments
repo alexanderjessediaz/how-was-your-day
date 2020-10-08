@@ -1,0 +1,72 @@
+These comments are problems I have while developing the App
+
+
+10/8/2020
+Feature: Auth
+
+For Auth0 I am unsure how to implement the Loading component when my App.js is a Class vs a functional component. 
+
+Here is how the guide has App set up to include the Loading component:
+
+const App = () => {
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return (
+    <div id="app" className="d-flex flex-column h-100">
+      <NavBar />
+      <Container className="flex-grow-1 mt-5">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/external-api" component={ExternalApi} />
+        </Switch>
+      </Container>
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
+
+_________________________________________________________________________________________________________________________________________
+
+Loading component:
+
+// import React from "react";
+// const loading =
+//   "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg";
+
+// const Loading = () => (
+//   <div className="spinner">
+//     <img src={loading} alt="Loading" />
+//   </div>
+// );
+
+// export default Loading;
+
+_________________________________________________________________________________________________________________________________________
+
+
+I made a IsLoading component, but this did not work:
+// import React from 'react';
+// import Loading from './Loading'
+// import { useAuth0 } from "@auth0/auth0-react";
+
+//  function IsLoading() {
+//     const { isLoading } = useAuth0();
+
+//     if (isLoading) {
+//       return <Loading />;
+//     }
+// }
+// export default IsLoading
+
+Guide I followed for implementing Auth into React:
+
+Resources: https://auth0.com/blog/complete-guide-to-react-user-authentication/
+
+
