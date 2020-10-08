@@ -1,13 +1,15 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
 
-import "../Styling/UserPost.css"
 
 function UserPost({title,content}) {
   return (
-    <li className="user-post">
-        <h2>{title}</h2>
-        <p>{content}</p>
-    </li>
+    <Card style={{ width: '18rem' }}>
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{content}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
 

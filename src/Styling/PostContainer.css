@@ -1,7 +1,7 @@
 .post-container{
-    display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     list-style-type: none;
-    justify-content: space-between;
-    width: 90%;
+    display: flex;
+    width: 100%;
+
 }

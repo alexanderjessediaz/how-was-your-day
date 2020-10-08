@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import UserPost from "./UserPost"
 import "../Styling/PostContainer.css"
 
+
+
 const postUrl = "http://localhost:4000/posts";
 
 
