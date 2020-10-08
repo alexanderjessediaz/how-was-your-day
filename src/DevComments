@@ -2,89 +2,12 @@ These comments are problems I have while developing the App
 
 
 10/8/2020
-Feature: Auth
+Feature: Date from Backend
 
-For Auth0 I am unsure how to implement the Loading component when my App.js is a Class vs a functional component. 
+I want to implement the date from the backend and allow make it so that when a user submits their post it:
+    A) only allows one post a day
+    B) displays a boolean: if true you can post today, if false then you can't post until the next day based on when you submitted the first post
 
-Here is how the guide has App set up to include the Loading component:
+    
 
-const App = () => {
-  const { isLoading } = useAuth0();
-
-  if (isLoading) {
-    return <Loading />;
-  }
-
-  return (
-    <div id="app" className="d-flex flex-column h-100">
-      <NavBar />
-      <Container className="flex-grow-1 mt-5">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/external-api" component={ExternalApi} />
-        </Switch>
-      </Container>
-      <Footer />
-    </div>
-  );
-};
-
-export default App;
-
-_________________________________________________________________________________________________________________________________________
-
-Loading component:
-
-// import React from "react";
-// const loading =
-//   "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg";
-
-// const Loading = () => (
-//   <div className="spinner">
-//     <img src={loading} alt="Loading" />
-//   </div>
-// );
-
-// export default Loading;
-
-_________________________________________________________________________________________________________________________________________
-
-
-I made a IsLoading component, but this did not work:
-// import React from 'react';
-// import Loading from './Loading'
-// import { useAuth0 } from "@auth0/auth0-react";
-
-//  function IsLoading() {
-//     const { isLoading } = useAuth0();
-
-//     if (isLoading) {
-//       return <Loading />;
-//     }
-// }
-// export default IsLoading
-
-Guide I followed for implementing Auth into React:
-
-Resources: https://auth0.com/blog/complete-guide-to-react-user-authentication/
-
-
----------------------
-
-PostContainer as a function 
-
-function PostContainer = ({posts}) => {
-
-const renderPosts = () => {
-    return posts.map(post=> <UserPost key={post.id} {...post}/>)
-  }
-
-render(){
-    return (
-      <ul className="post-container">
-          {renderPosts()}
-      </ul>
-    );
-}
 
