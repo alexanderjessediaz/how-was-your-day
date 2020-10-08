@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-import { Hero }  from "../Components";
+import { Hero, PostForm }  from "../Components";
 
 
 class Home extends Component {
@@ -9,6 +9,7 @@ class Home extends Component {
     return (
       <Fragment>
         <Hero />
+        <PostForm/>
       </Fragment>
     )
   }
