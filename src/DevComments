@@ -70,3 +70,21 @@ Guide I followed for implementing Auth into React:
 Resources: https://auth0.com/blog/complete-guide-to-react-user-authentication/
 
 
+---------------------
+
+PostContainer as a function 
+
+function PostContainer = ({posts}) => {
+
+const renderPosts = () => {
+    return posts.map(post=> <UserPost key={post.id} {...post}/>)
+  }
+
+render(){
+    return (
+      <ul className="post-container">
+          {renderPosts()}
+      </ul>
+    );
+}
+

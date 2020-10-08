@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
+import { PostContainer } from "../Components"
 
 
 const Profile = () => {
@@ -23,7 +24,9 @@ const Profile = () => {
         </Col>
       </Row>
       <Row>
+      <PostContainer/>
       </Row>
+
     </Container>
   );
 };
