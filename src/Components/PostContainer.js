@@ -13,6 +13,7 @@ class PostContainer extends Component {
     posts:[]
   };
 
+
   componentDidMount(){
     this.getPosts()
   };
@@ -22,6 +23,12 @@ class PostContainer extends Component {
       .then(response => response.json())
       .then(posts => this.setState({posts}))
   };
+
+  addPost = (newPost) => {
+    this.setState({
+      posts: [...this.state.posts, newPost]
+    })
+  } 
 
   renderPosts = () =>{
     return this.state.posts.map(post=> <UserPost key={post.id} {...post}/>)
