@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
-import { PostContainer } from "../Components"
+import { PostContainer } from "../Containers";
+import Home from "./Home"
 
 
 const Profile = () => {
@@ -24,7 +25,10 @@ const Profile = () => {
         </Col>
       </Row>
       <Row>
-      <PostContainer/>
+        <Home/>
+      </Row>
+      <Row>
+        <PostContainer/>
       </Row>
 
     </Container>

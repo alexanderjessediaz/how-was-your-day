@@ -3,8 +3,8 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuth0 } from "@auth0/auth0-react";
 
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
+import LoginButton from "../AuthComponents/LoginButton";
+import LogoutButton from "../AuthComponents/LogoutButton";
 
 
 const MainNav = () => (

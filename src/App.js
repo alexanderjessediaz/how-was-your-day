@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import { NavBar, PrivateRoute, Loading } from "./Components";
+import NavBar from "./Containers/NavBar";
+import { PrivateRoute, Loading } from "./AuthComponents"
 import { Home, Profile, ExternalApi } from "./Views/Index";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Styling/App.css"
