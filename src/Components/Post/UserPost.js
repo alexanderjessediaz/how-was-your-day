@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 function UserPost({title,content}) {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="user-post-card" style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{content}</Card.Text>
