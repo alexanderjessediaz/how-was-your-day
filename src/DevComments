@@ -9,5 +9,19 @@ I want to implement the date from the backend and allow make it so that when a u
     B) displays a boolean: if true you can post today, if false then you can't post until the next day based on when you submitted the first post
 
     
+10/15/2020
+Still having trouble with the Auth Loading Component since I need App to be a class to call in my backend data. Not sure if there is a way to make authO work when App is a class or if I can make another higher component to call in my data. For now I am going to change App to a class and fetch in my data there to pass down. I am going to leave the Loading logic here when App was a variable component. 
 
+
+const App = () => {
+// const { isLoading } = useAuth0();
+
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
+  // return(
+      ...
+  )
+
+}
 
