@@ -1,6 +1,6 @@
 import React from 'react';
-import UserPost from "../Components/UserPost"
-import "../Styling/PostContainer.css"
+import UserPost from '../Components//Post/UserPost';
+import '../Styling/PostContainer.css';
 
 
 function PostContainer ({posts}) {

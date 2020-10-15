@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import NavBar from "./Containers/NavBar";
 import { PrivateRoute, Loading } from "./AuthComponents"
-import { Home, Profile, ExternalApi } from "./Views/Index";
+import { Home, Profile } from "./Views/index";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Styling/App.css"
 
@@ -23,7 +23,7 @@ const App = () => {
           <Switch>
             <Route path="/" exact component={Home} />
             <PrivateRoute path="/Profile" component={Profile} />
-            <PrivateRoute path="/external-api" component={ExternalApi} />
+            {/* <PrivateRoute path="/external-api" component={ExternalApi} /> */}
           </Switch>
         </Container>
       </div>

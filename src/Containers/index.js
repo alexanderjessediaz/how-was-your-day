@@ -1,6 +1,6 @@
 import PostContainer from "./PostContainer"
 import Hero from "./Hero"
 import NavBar from "./NavBar"
-import UserPostPage from "./UserPostsPage"
+import UserPostsPage from "./UserPostsPage"
 
-export {PostContainer, Hero, NavBar, UserPostPage}
+export {PostContainer, Hero, NavBar, UserPostsPage}
