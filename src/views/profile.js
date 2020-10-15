@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
-import { PostContainer } from "../Containers";
+import { UserPostsPage } from "../Containers";
 import Home from "./Home"
 
 
@@ -28,7 +28,7 @@ const Profile = () => {
         <Home/>
       </Row>
       <Row>
-        <PostContainer/>
+        <UserPostsPage/>
       </Row>
 
     </Container>
