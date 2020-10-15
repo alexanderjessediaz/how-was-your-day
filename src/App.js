@@ -1,49 +1,34 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import NavBar from "./Containers/NavBar";
-import { PrivateRoute } from "./AuthComponents"
+import { PrivateRoute, Loading } from "./AuthComponents"
 import { Home, Profile, ExternalApi } from "./Views/index";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import "./Styling/App.css"
-const postUrl = "http://localhost:4000/posts";
 
-class App extends Component {
 
-  state = {
-    posts:[]
-  };
-
-  componentDidMount(){
-    this.getPosts()
-  };
-
-  getPosts = () => {
-    fetch(postUrl)
-      .then(response => response.json())
-      .then(posts => this.setState({posts}))
-  };
-
-  addPost = (newPost) => {
-    this.setState({
-      posts: [...this.state.posts, newPost]
-    })
-  } 
+const App = () => {
   
-  
-    render(){
-      return (
-        <div className="App">
-          <NavBar />
-          <Container className="flex-grow-1 mt-5">
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <PrivateRoute path="/Profile" component={Profile} />
-              <PrivateRoute path="/external-api" component={ExternalApi} />
-            </Switch>
-          </Container>
-        </div>
-      );
-   }
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <Loading />;
+  }
+    
+    return (
+      <div className="App">
+        <NavBar />
+        <Container className="flex-grow-1 mt-5">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <PrivateRoute path="/Profile" component={Profile} />
+            <PrivateRoute path="/external-api" component={ExternalApi} />
+          </Switch>
+        </Container>
+      </div>
+    );
+  // }
 }
+
 export default App;

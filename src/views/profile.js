@@ -25,9 +25,6 @@ const Profile = () => {
         </Col>
       </Row>
       <Row>
-        <Home/>
-      </Row>
-      <Row>
         <UserPostsPage/>
       </Row>
 
