@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Form, Button} from 'react-bootstrap';
+import '../Styling/PostForm.css';
 
 
 class PostForm extends Component {
@@ -24,7 +25,7 @@ class PostForm extends Component {
 
     render() {
         return (
-            <Form>
+            <Form className="post-form">
                 <Form.Group>
                     <Form.Label>Title for the day:</Form.Label>
                     <Form.Control size="lg" type="text" />

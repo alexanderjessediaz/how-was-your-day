@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PostContainer from '../Containers/PostContainer'
 import PostForm from '../Components/PostForm';
 
+import { Container, Row } from "react-bootstrap";
+
 const postUrl = "http://localhost:4000/posts";
 
 
@@ -30,8 +32,17 @@ class UserPostPage extends Component {
     render(){
         return(
             <>
+            <Container fluid>
+              <Row>
                 <PostForm addPost={this.addPost}/>
+              </Row>
+              <Row>
                 <PostContainer posts={this.state.posts}/>
+              </Row>
+            </Container>
+          
+            
+          
             </>
         )
     }
