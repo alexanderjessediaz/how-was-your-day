@@ -30,7 +30,7 @@ class PostForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addPost()
+        this.props.addPost(this.state)
     }
 
     render() {
