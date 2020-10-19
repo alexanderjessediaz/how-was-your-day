@@ -1,5 +1,6 @@
-import ExternalApi from "./external-api";
-import Home from "./Home";
-import Profile from "./Profile";
+import externalApi from "./external-api";
+import home from "./home";
+import profile from "./profile";
+import UserPostPage from './UserPostPage'
 
-export { ExternalApi, Home, Profile };
+export { externalApi, home, profile, UserPostPage };
