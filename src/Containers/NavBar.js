@@ -44,7 +44,7 @@ const NavBar = () => {
           <Navbar.Brand as={RouterNavLink} className="logo" to="/" />
           <MainNav />
           <AuthNav />
-        </Container>
+      </Container>
       </Navbar>
     );
   };

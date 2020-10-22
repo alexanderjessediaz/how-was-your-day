@@ -28,21 +28,28 @@ class UserPostPage extends Component {
         this.setState({
           posts: [...this.state.posts, newPost]
         })
+
+        fetch(postUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newPost)
+        })
       } 
+
+      
     render(){
         return(
             <>
-            <Container fluid>
-              <Row>
-                <PostForm addPost={this.addPost}/>
-              </Row>
-              <Row>
-                <PostContainer posts={this.state.posts}/>
-              </Row>
-            </Container>
-          
-            
-          
+              <Container fluid>
+                <Row>
+                  <PostForm addPost={this.addPost}/>
+                </Row>
+                <Row>
+                  <PostContainer posts={this.state.posts}/>
+                </Row>
+              </Container>
             </>
         )
     }
