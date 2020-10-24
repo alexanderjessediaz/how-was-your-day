@@ -38,6 +38,13 @@ class UserPostPage extends Component {
         })
       } 
 
+      deletePost = (id) => {
+        let filtered = this.state.posts.filter(post => post.id !== id)
+        this.setState({
+          posts: filtered
+        })
+      }
+
       
     render(){
         return(
@@ -47,7 +54,10 @@ class UserPostPage extends Component {
                   <PostForm addPost={this.addPost}/>
                 </Row>
                 <Row>
-                  <PostContainer posts={this.state.posts}/>
+                  <PostContainer
+                   posts={this.state.posts}
+                   deletePost={this.deletePost}
+                  />
                 </Row>
               </Container>
             </>
