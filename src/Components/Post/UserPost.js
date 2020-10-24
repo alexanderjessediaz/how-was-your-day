@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import {Card, Button} from 'react-bootstrap';
 
 
 function UserPost({title,content}) {
@@ -8,7 +8,9 @@ function UserPost({title,content}) {
       <Card.Body >
         <Card.Title >{title}</Card.Title>
         <Card.Text>{content}</Card.Text>
+        <Button size="sm" name="delete-btn" variant="info">Delete</Button>
       </Card.Body>
+
     </Card>
   );
 }
