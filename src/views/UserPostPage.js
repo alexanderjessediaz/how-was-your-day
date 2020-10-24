@@ -43,6 +43,8 @@ class UserPostPage extends Component {
         this.setState({
           posts: filtered
         })
+
+        fetch(postUrl + "/" + id, {method:"DELETE"})
       }
 
       
