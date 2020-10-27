@@ -72,7 +72,7 @@ class PostForm extends Component {
                     <Button as="input" type="submit" value="submit" />
 
                 </Form.Group>
-                    {/* {this.showUpdateCheckbox()} */}
+                    {this.showUpdateCheckbox()}
             </Form>
         )
     }
