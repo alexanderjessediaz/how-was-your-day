@@ -6,9 +6,9 @@ import '../Styling/PostContainer.css';
 
 
 
-const PostContainer = ({posts, deletePost}) => {
+const PostContainer = ({posts, deletePost, updatePost}) => {
   const renderPosts = () =>{
-    return posts.map(post=> <UserPost key={post.id} {...post} deletePost={deletePost}/>)
+    return posts.map(post=> <UserPost key={post.id} {...post} updatePost={updatePost} deletePost={deletePost}/>)
    }
     return (
       <ul className="post-container">

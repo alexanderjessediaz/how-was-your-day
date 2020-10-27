@@ -38,6 +38,12 @@ class UserPostPage extends Component {
         })
       } 
 
+      updatePost = (updatedPost) => {
+        let posts = this.state.posts.map(post => post.id === updatedPost.id ? updatedPost: post)
+
+        this.setState({posts})
+      }
+
       deletePost = (id) => {
         let filtered = this.state.posts.filter(post => post.id !== id)
         this.setState({
@@ -53,10 +59,11 @@ class UserPostPage extends Component {
             <>
               <Container fluid>
                 <Row>
-                  <PostForm addPost={this.addPost}/>
+                  <PostForm submitAction={this.addPost}/>
                 </Row>
                 <Row>
                   <PostContainer
+                   updatePost={this.updatePost}
                    posts={this.state.posts}
                    deletePost={this.deletePost}
                   />

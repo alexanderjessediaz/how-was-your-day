@@ -4,7 +4,8 @@ import '../Styling/PostForm.css';
 
 const initialState = {
     title:"",
-    content:""
+    content:"",
+    update: false
 }
 
 
@@ -37,10 +38,13 @@ class PostForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addPost(this.state)
+        this.props.submitAction(this.state)
+        if(this.props.handleToggle){
+            this.props.handleToggle()
+        }
     }
 
-    showDoneCheckbox = () => {
+    showUpdateCheckbox = () => {
         return this.props.post 
             ? (
                 <div className="update-btn">
@@ -56,7 +60,7 @@ class PostForm extends Component {
 
   
     render() {
-        let {title, content, update} = this.state
+        const {title, content,} = this.state
         return (
             <Form className="post-form" onSubmit={this.handleSubmit}>
                 {this.props.post ? <h3>Edit Post</h3>: <h3>Create a Post</h3>}
@@ -65,10 +69,10 @@ class PostForm extends Component {
                     <Form.Control size="lg" name="title" type="text" value={title} onChange={this.handleChange} />
                     <Form.Label>Your day:</Form.Label>
                     <Form.Control as="textarea" name="content" rows="20" value={content} onChange={this.handleChange}/>
-                    <Button as="input" type="submit" value="submit"/>
-                    {this.showDoneCheckbox()}
+                    <Button as="input" type="submit" value="submit" />
 
                 </Form.Group>
+                    {/* {this.showUpdateCheckbox()} */}
             </Form>
         )
     }

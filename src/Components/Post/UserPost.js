@@ -4,7 +4,7 @@ import PostForm from '../PostForm'
 import "../../Styling/UserPost.css"
 
 
-function UserPost({id, title,content, deletePost, update}) {
+function UserPost({id, title,content, deletePost, update, updatePost}) {
 
   const post = {id, title, content, update}
 
@@ -38,7 +38,12 @@ function UserPost({id, title,content, deletePost, update}) {
     </Card>
   )
 
-  return isToggled ? <PostForm post={post}/> : postCard()
+  return isToggled 
+  ? <PostForm 
+      handleToggle={handleToggle} 
+      submitAction={updatePost} 
+      post={post}/> 
+    : postCard()
 }
 
 export default UserPost
