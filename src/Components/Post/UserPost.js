@@ -4,9 +4,9 @@ import PostForm from '../PostForm'
 import "../../Styling/UserPost.css"
 
 
-function UserPost({id, title,content, deletePost, done}) {
+function UserPost({id, title,content, deletePost, update}) {
 
-  const post = {id, title, content, done}
+  const post = {id, title, content, update}
 
   const [isToggled, setIsToggled] = useState(false)
 

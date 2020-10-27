@@ -11,6 +11,18 @@ const initialState = {
 class PostForm extends Component {
 
     state = initialState
+
+    componentDidMount(){
+        const {post} = this.props
+        if(this.props.post){
+            const {title,content,update} = post
+            this.setState({
+                title,
+                content,
+                update
+            })
+        }
+    }
     
 
     handleChange = (e) => {
@@ -25,8 +37,23 @@ class PostForm extends Component {
         this.props.addPost(this.state)
     }
 
+    showDoneCheckbox = () => {
+        return this.props.post 
+            ? (
+                <div className="update-btn">
+                    <label>Update</label>
+                    <input 
+                        type="checkbox" 
+                        name="update"  
+                        checked={this.state.update} 
+                        onChange={this.handleChange}/>
+                </div>
+            ) : null
+    }
+
+  
     render() {
-        let {title, content} = this.state
+        let {title, content, update} = this.state
         return (
             <Form className="post-form" onSubmit={this.handleSubmit}>
                 {this.props.post ? <h3>Edit Post</h3>: <h3>Create a Post</h3>}
@@ -36,6 +63,8 @@ class PostForm extends Component {
                     <Form.Label>Your day:</Form.Label>
                     <Form.Control as="textarea" name="content" rows="20" value={content} onChange={this.handleChange}/>
                     <Button as="input" type="submit" value="submit"/>
+                    {this.showDoneCheckbox()}
+
                 </Form.Group>
             </Form>
         )
