@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Card, Button} from 'react-bootstrap';
+import PostForm from '../PostForm'
+import "../../Styling/UserPost.css"
 
 
 function UserPost({id, title,content, deletePost}) {
@@ -9,29 +11,32 @@ function UserPost({id, title,content, deletePost}) {
   const handleClick = (e) => deletePost(id)
 
   const handleToggle = (e) => setIsToggled(!isToggled)
-  return (
+
+  const postCard = () => (
+
     <Card className="user-post-card" style={{ width: '18rem' }}>
       <Card.Body >
-        <Card.Title >{title}</Card.Title>
-        <Card.Text>{content}</Card.Text>
-        <Button 
-          size="sm"
-          name="delete-btn" 
-          variant="info"
-          onClick={handleClick}
-          >Delete
-        </Button>
-        <Button 
-          size="sm"
-          name="edit-btn" 
-          variant="success"
-          onClick={handleToggle}
-          >Edit
-        </Button>
-      </Card.Body>
-
+          <Card.Title >{title}</Card.Title>
+          <Card.Text>{content}</Card.Text>
+          <Button 
+            size="sm"
+            name="delete-btn" 
+            variant="info"
+            onClick={handleClick}
+            >Delete
+          </Button>
+          <Button 
+            size="sm"
+            name="edit-btn" 
+            variant="success"
+            onClick={handleToggle}
+            >Edit
+          </Button>
+        </Card.Body>
     </Card>
-  );
+  )
+
+  return isToggled ? <PostForm/> : postCard()
 }
 
 export default UserPost
