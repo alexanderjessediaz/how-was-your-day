@@ -26,7 +26,9 @@ class PostForm extends Component {
     
 
     handleChange = (e) => {
-        let {name,value} = e.target
+        let {name,value, checked} = e.target
+
+        value = (name === "update")? checked : value
         this.setState({
             [name]: value
         })
