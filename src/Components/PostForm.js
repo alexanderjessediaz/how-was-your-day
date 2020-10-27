@@ -13,14 +13,6 @@ class PostForm extends Component {
     state = initialState
     
 
-    // componentDidMount(){
-    //     const {post} = this.props
-    //     if(this.props.post){
-    //         const {title,content} = post
-    //         this.setState({title, content})
-    //     }
-    // }
-
     handleChange = (e) => {
         let {name,value} = e.target
         this.setState({
@@ -37,6 +29,7 @@ class PostForm extends Component {
         let {title, content} = this.state
         return (
             <Form className="post-form" onSubmit={this.handleSubmit}>
+                {this.props.post ? <h3>Edit Post</h3>: <h3>Create a Post</h3>}
                 <Form.Group>
                     <Form.Label>Title for the day:</Form.Label>
                     <Form.Control size="lg" name="title" type="text" value={title} onChange={this.handleChange} />
