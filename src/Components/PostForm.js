@@ -15,8 +15,9 @@ class PostForm extends Component {
     componentDidMount(){
         const {post} = this.props
         if(this.props.post){
-            const {title,content,update} = post
+            const {id, title,content,update} = post
             this.setState({
+                id,
                 title,
                 content,
                 update
