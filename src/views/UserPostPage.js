@@ -34,7 +34,7 @@ class UserPostPage extends Component {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(newPost)
+          body: JSON.stringify({post: newPost})
         })
       } 
 
@@ -42,6 +42,14 @@ class UserPostPage extends Component {
         let posts = this.state.posts.map(post => post.id === updatedPost.id ? updatedPost: post)
 
         this.setState({posts})
+
+        fetch(postUrl + "/" + updatedPost.id, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({post:updatedPost})
+        })
       }
 
       deletePost = (id) => {
