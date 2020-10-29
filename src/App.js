@@ -20,6 +20,7 @@ const App = () => {
       <div className="App">
         <NavBar />
         <Container className="flex-grow-1 mt-5">
+        
           <Switch>
             <Route path="/signUp" component={RailsSignUpForm}/>
             <Route path="/" exact component={home} />

@@ -3,9 +3,9 @@ import RailsSignUpForm from '../AuthComponents/RailsSignUpForm'
 
  class RailsSignUp extends Component {
      state = {
-        //  username: "",
-        //  password: "",
-        //  email: ""
+         username: "",
+         password: "",
+         email: ""
      }
      render(){
         return (
