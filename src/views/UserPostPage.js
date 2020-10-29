@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import PostContainer from '../Containers/PostContainer'
 import PostForm from '../Components/PostForm';
+import {RailsSignUpForm} from '../AuthComponents'
 
 import { Container, Row } from "react-bootstrap";
 
 const postUrl = "http://localhost:4000/posts";
+const userURL = "http://localhost:4000/users";
 
 
 
 
 class UserPostPage extends Component {
     state = {
-        posts:[]
+        posts:[],
+        user:{},
+        alerts:[]
       };
     
       componentDidMount(){
@@ -61,11 +65,34 @@ class UserPostPage extends Component {
         fetch(postUrl + "/" + id, {method:"DELETE"})
       }
 
+      signUp = (user) => {
+        fetch(userURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({user})
+        })
+        .then(res => res.json())
+        .then(res => {
+            if(res.errors){
+                this.setState({alerts: res.errors})
+            }
+            else {
+                this.setState({
+                    user: res.user,
+                    alerts: ["User successfully created!"]
+                })
+            }
+        })
+     }
+
       
     render(){
         return(
             <>
               <Container fluid>
+              <RailsSignUpForm signUp={this.signUp}/>
                 <Row>
                   <PostForm submitAction={this.addPost}/>
                 </Row>

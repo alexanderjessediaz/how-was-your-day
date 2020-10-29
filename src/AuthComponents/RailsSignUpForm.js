@@ -6,7 +6,7 @@ import React, {useState} from 'react';
      const [password, setPassword] = useState("")
     //  const [email, setEmail] = useState("")
 
-     const userURL = "http://localhost:3000/users"
+    //  const userURL = "http://localhost:4000/users"
 
      const handleSubmit = (event) => {
          event.preventDefault()
@@ -14,13 +14,7 @@ import React, {useState} from 'react';
              username,
              password
          }
-         fetch(userURL, {
-             method: "POST",
-             headers: {
-                 "Content-Type": "application/json"
-             },
-             body: JSON.stringify({user})
-         })
+         props.signUp(user)
      }
 
      const handleChange = ({target}) => {
