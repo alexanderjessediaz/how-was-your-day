@@ -27,8 +27,10 @@ import React, {useState} from 'react';
 
         
   return (
-
-    <form onSubmit={handleSubmit}>
+      
+      <form className="signup-form " onSubmit={handleSubmit}>
+      <h1 className="signup-title">H W Y D</h1>
+      <h2 className="signup-subtitle">Sign Up</h2>
         <label>Username</label>
         <input name="username" value={username} onChange={handleChange}/>
         <label>Password</label>

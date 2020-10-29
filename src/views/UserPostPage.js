@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PostContainer from '../Containers/PostContainer'
 import PostForm from '../Components/PostForm';
 import {RailsSignUpForm} from '../AuthComponents'
+import "../Styling/UserPostPage.css"
 
 import { Container, Row } from "react-bootstrap";
 
