@@ -23,6 +23,8 @@ import React, {useState} from 'react';
             :setPassword(target.value)
         }
 
+    const showAlerts = () => props.alerts.map(alert =><p>{alert}</p>)
+
         
   return (
 
@@ -32,6 +34,7 @@ import React, {useState} from 'react';
         <label>Password</label>
         <input name="password" value={password} onChange={handleChange}/>
         <input type="submit"/>
+        {props.alerts ? showAlerts(): null}
     </form>
     // <Form onSubmit={handleSubmit}>
     //     <Form.Group >

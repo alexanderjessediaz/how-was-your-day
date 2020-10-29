@@ -92,7 +92,7 @@ class UserPostPage extends Component {
         return(
             <>
               <Container fluid>
-              <RailsSignUpForm signUp={this.signUp}/>
+              <RailsSignUpForm signUp={this.signUp} alerts={this.state.alerts}/>
                 <Row>
                   <PostForm submitAction={this.addPost}/>
                 </Row>
