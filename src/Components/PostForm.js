@@ -60,7 +60,7 @@ class PostForm extends Component {
 
   
     render() {
-        const {title, content,} = this.state
+        const {title, content} = this.state
         return (
             <Form className="post-form" onSubmit={this.handleSubmit}>
                 {this.props.post ? <h3>Edit Post</h3>: <h3>Create a Post</h3>}

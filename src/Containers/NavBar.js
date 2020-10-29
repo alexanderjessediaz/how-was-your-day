@@ -10,6 +10,14 @@ const MainNav = () => (
   <Nav className="mr-auto">
     <Nav.Link
       as={RouterNavLink}
+      to="/signUp"
+      exact
+      activeClassName="router-link-exact-active"
+    >
+      HowWasYourDay sign up
+    </Nav.Link>
+    <Nav.Link
+      as={RouterNavLink}
       to="/"
       exact
       activeClassName="router-link-exact-active"
