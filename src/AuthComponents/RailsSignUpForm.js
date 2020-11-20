@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
-// import {Form, Button} from 'react-bootstrap';
 
  function RailsSignUpForm(props) {
      const [username, setUsername] = useState("")
      const [password, setPassword] = useState("")
-    //  const [email, setEmail] = useState("")
-
-    //  const userURL = "http://localhost:4000/users"
+    
 
      const handleSubmit = (event) => {
          event.preventDefault()

@@ -25,3 +25,7 @@ const App = () => {
 
 }
 
+// 11/20/20
+// removing all of Auth-O and fixing favicon
+// Need to get this up and running and I don't think spending a lot of time on figuring out Auth-O is productive as much as getting a functioning app running 
+
