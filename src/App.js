@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Form, Button, Navbar} from 'react-bootstrap';
-import JournalLogo from "./Images/journalfavicon.png"
+import { Navbar, Nav, Container} from 'react-bootstrap';
+import PostForm from './Components/Post/PostForm'
+import JournalFavicon from "./Images/journalfavicon.png"
+// import JournalContainer from './Images/Journal-container-image.png'
 import "./Styling/App.css";
 
 const initialState = {
@@ -58,33 +60,31 @@ class App extends Component {
   
   
   render(){
-    const {title, content} = this.state
+    // const {title, content} = this.state
     return (
       <div className="App">
          <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="#home">
-            <img
-              alt=""
-              src={JournalLogo}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-            React Bootstrap
-          </Navbar.Brand>
+         <Nav className="mr-auto">
+            <Navbar.Brand href="#home">
+              <img
+                alt=""
+                src={JournalFavicon}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+              />{' '}
+              HWYD
+            </Navbar.Brand>
+         </Nav>
+          <Nav>
+            <Nav.Link eventKey={2} href="#">
+              Sign-in
+            </Nav.Link>
+          </Nav>
         </Navbar>
-        <Form className="post-form" onSubmit={this.handleSubmit}>
-          {this.props.post ? <h3>Edit Post</h3>: <h3>Create a Post</h3>}
-          <Form.Group>
-              <Form.Label>Title for the day:</Form.Label>
-              <Form.Control size="lg" name="title" type="text" value={title} onChange={this.handleChange} />
-              <Form.Label>Your day:</Form.Label>
-              <Form.Control as="textarea" name="content" rows="20" value={content} onChange={this.handleChange}/>
-              <Button as="input" type="submit" value="submit" />
+        <PostForm/>
 
-          </Form.Group>
-          {this.showUpdateCheckbox()}
-        </Form>
+      
       </div>
     );
   }

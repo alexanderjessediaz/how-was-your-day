@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Form, Button} from 'react-bootstrap';
-import '../Styling/PostForm.css';
+import {Form, Button, Container} from 'react-bootstrap';
+import '../../Styling/PostForm.css';
 
 const initialState = {
     title:"",
@@ -62,7 +62,8 @@ class PostForm extends Component {
     render() {
         const {title, content} = this.state
         return (
-            <Form className="post-form" onSubmit={this.handleSubmit}>
+            <Container className="post-form-container">
+                <Form className="post-form" onSubmit={this.handleSubmit}>
                 {this.props.post ? <h3>Edit Post</h3>: <h3>Create a Post</h3>}
                 <Form.Group>
                     <Form.Label>Title for the day:</Form.Label>
@@ -72,8 +73,9 @@ class PostForm extends Component {
                     <Button as="input" type="submit" value="submit" />
 
                 </Form.Group>
-                    {this.showUpdateCheckbox()}
-            </Form>
+                {this.showUpdateCheckbox()}
+                </Form>
+      </Container>
         )
     }
 }
