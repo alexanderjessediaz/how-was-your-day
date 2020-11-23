@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Favicon from 'react-favicon';
 import App from './App';
-import { BrowserRouter as Router } from "react-router-dom";
-import Auth0ProviderWithHistory from "./auth0-provider-with-history";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Router>
-    <Auth0ProviderWithHistory>
-      <App />
-    </Auth0ProviderWithHistory>
-    </Router>,
+  <React.StrictMode>
+    <Favicon url="https://www.freeiconspng.com/uploads/open-book-icon-icon--open-book-2-svg-12.png"/>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

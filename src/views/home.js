@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
-import Hero from '../Containers/Hero';
+// import React, { Fragment } from 'react';
+// import Hero from '../Containers/Hero';
 
-const Home = ()=> {
-    return (
-      <Fragment>
-        <Hero />
-      </Fragment>
-    )
-};
+// const Home = ()=> {
+//     return (
+//       <Fragment>
+//         <Hero />
+//       </Fragment>
+//     )
+// };
 
-export default Home;
+// export default Home;
