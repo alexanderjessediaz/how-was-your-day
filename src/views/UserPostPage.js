@@ -7,8 +7,6 @@ import { Container, Row } from "react-bootstrap";
 const postUrl = "http://localhost:4000/posts";
 
 
-
-
 class UserPostPage extends Component {
     state = {
         posts:[]
