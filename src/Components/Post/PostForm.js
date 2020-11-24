@@ -64,7 +64,7 @@ class PostForm extends Component {
         return (
             <Container className="post-form-container">
                 <Form className="post-form" onSubmit={this.handleSubmit}>
-                {this.props.post ? <h3>Edit Post</h3>: <h3>Create a Post</h3>}
+                {this.props.post ? <h3>Edit Post</h3>: <h3 id="new-post-h3">Create a Post</h3>}
                 <Form.Group>
                     <Form.Label>Title for the day:</Form.Label>
                     <Form.Control size="lg" name="title" type="text" value={title} onChange={this.handleChange} />

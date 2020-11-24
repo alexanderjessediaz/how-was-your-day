@@ -1,66 +1,67 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Container} from 'react-bootstrap';
+import { Navbar, Nav,} from 'react-bootstrap';
 import PostForm from './Components/Post/PostForm'
-import JournalFavicon from "./Images/journalfavicon.png"
-// import JournalContainer from './Images/Journal-container-image.png'
+import JournalFavicon from "./Images/journalfavicon.png";
+import  SignUpModal from "./AuthComponents/SignUpModal"
 import "./Styling/App.css";
 
-const initialState = {
-  title:"",
-  content:"",
-  update: false
-}
+const postUrl = "http://localhost:4000/posts";
 
 class App extends Component {
-  state = initialState
+  state = {
+    posts:[]
+  };
 
   componentDidMount(){
-      const {post} = this.props
-      if(this.props.post){
-          const {id, title,content,update} = post
-          this.setState({
-              id,
-              title,
-              content,
-              update
-          })
-      }
-  }
-  
-  handleChange = (e) => {
-      let {name,value, checked} = e.target
+    this.getPosts()
+  };
 
-      value = (name === "update")? checked : value
-      this.setState({
-          [name]: value
-      })
+  getPosts = () => {
+    fetch(postUrl)
+      .then(response => response.json())
+      .then(posts => this.setState({posts}))
+  };
+
+  addPost = (newPost) => {
+    this.setState({
+      posts: [...this.state.posts, newPost]
+    })
+
+    fetch(postUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({post: newPost})
+    })
+  } 
+
+  updatePost = (updatedPost) => {
+    let posts = this.state.posts.map(post => post.id === updatedPost.id ? updatedPost: post)
+
+    this.setState({posts})
+
+    fetch(postUrl + "/" + updatedPost.id, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({post:updatedPost})
+    })
   }
 
-  handleSubmit = (e) => {
-      e.preventDefault();
-      this.props.submitAction(this.state)
-      if(this.props.handleToggle){
-          this.props.handleToggle()
-      }
-  }
+  deletePost = (id) => {
+    let filtered = this.state.posts.filter(post => post.id !== id)
+    this.setState({
+      posts: filtered
+    })
 
-  showUpdateCheckbox = () => {
-      return this.props.post 
-          ? (
-              <div className="update-btn">
-                  <label>Update</label>
-                  <input 
-                      type="checkbox" 
-                      name="update"  
-                      checked={this.state.update} 
-                      onChange={this.handleChange}/>
-              </div>
-          ) : null
+    fetch(postUrl + "/" + id, {method:"DELETE"})
   }
   
   
   render(){
-    // const {title, content} = this.state
+    
     return (
       <div className="App">
          <Navbar bg="dark" variant="dark">
@@ -78,13 +79,11 @@ class App extends Component {
          </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#">
-              Sign-in
+              <SignUpModal/>
             </Nav.Link>
           </Nav>
         </Navbar>
         <PostForm/>
-
-      
       </div>
     );
   }

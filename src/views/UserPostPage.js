@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PostContainer from '../Containers/PostContainer'
-import PostForm from '../Components/PostForm';
+import PostForm from '../Components/Post/PostForm';
 
 import { Container, Row } from "react-bootstrap";
 

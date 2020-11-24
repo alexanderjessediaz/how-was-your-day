@@ -2,7 +2,6 @@
     flex-direction: column;
     list-style-type: none;
     display: flex;
-    background-image: url("../Images/Journal-container-image.png");
     width: 100%;
 
 }

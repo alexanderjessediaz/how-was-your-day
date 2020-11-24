@@ -1,7 +1,12 @@
 .post-form {
+    padding: 10%;
     width: 100%;
 }
 
 #post-form-container{
     margin: auto;
+}
+
+#new-post-h3 {
+    margin-top: 6rem;
 }
